@@ -1,2 +1,2 @@
 # azitattoo
-The Website of Azi Tattoo Studio
+The Website of Azi Tattoo Beauty
