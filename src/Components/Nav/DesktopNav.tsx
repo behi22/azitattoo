@@ -1,30 +1,20 @@
 import { Menu, MenuProps } from 'antd';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { items } from './AntNav';
+
+const styling = {
+  fontSize: '1.175em',
+  borderBottom: 'none',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center'
+};
 
 const DesktopNav: React.FC<{
   routeOnMount: string;
 }> = ({ routeOnMount }) => {
   const navigate = useNavigate();
-
-  const items: MenuProps['items'] = [
-    // {
-    //   label: 'Portfolio',
-    //   key: 'portfolio'
-    // },
-    // {
-    //   label: 'Contact and About Us',
-    //   key: 'contact-about'
-    // },
-    // {
-    //   label: 'Careers',
-    //   key: 'careers'
-    // },
-    // {
-    //   label: 'Pricing',
-    //   key: 'pricing'
-    // }
-  ];
 
   const onClick: MenuProps['onClick'] = (e) => {
     const route = e.key;
@@ -37,6 +27,8 @@ const DesktopNav: React.FC<{
       selectedKeys={[routeOnMount]}
       mode='horizontal'
       items={items}
+      style={styling}
+      className='desktopMenu'
     ></Menu>
   );
 };

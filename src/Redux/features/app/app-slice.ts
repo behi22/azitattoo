@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export type AccountState = {
+export type AppState = {
   route: string;
 };
 
-const initialState: AccountState = {
+const initialState: AppState = {
   route: '/'
 };
 

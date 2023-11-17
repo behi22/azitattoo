@@ -1,13 +1,13 @@
 import React from 'react';
-import { changeRoute } from '../Redux/features/app/app-slice';
 import { useDispatch } from 'react-redux';
+import { changeRoute } from '../Redux/features/app/app-slice';
 import { FloatButton } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
 
-const Home: React.FC = () => {
+const Contact: React.FC = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
-    dispatch(changeRoute('/'));
+    dispatch(changeRoute('/contact'));
   }, []);
   return (
     <div style={{ minHeight: '100vh' }}>
@@ -15,9 +15,9 @@ const Home: React.FC = () => {
         style={{ insetInlineStart: '3%', bottom: 25, left: 35 }}
         icon={<UpOutlined style={{ color: 'white' }} />}
       />
-      hi
+      Contact
     </div>
   );
 };
 
-export default Home;
+export default Contact;
