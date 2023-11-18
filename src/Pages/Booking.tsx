@@ -95,7 +95,7 @@ const Booking: React.FC = () => {
         icon={<UpOutlined style={{ color: 'white' }} />}
       />
       <Row justify={'center'} gutter={[0, 50]}>
-        <Col xs={24} sm={23} md={20}>
+        <Col xs={9} sm={23} md={20}>
           <Steps current={currentStep} items={stepItems} />
         </Col>
         <Col xs={21} sm={20} md={18} lg={16}>
