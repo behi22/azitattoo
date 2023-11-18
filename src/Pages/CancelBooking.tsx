@@ -17,7 +17,7 @@ const CancelBooking: React.FC = () => {
       const id = url?.split('?')?.pop();
       try {
         const doc = (await fetchSingleDocument('bookings', id)).data();
-        const { email, service, time, date } = doc;
+        const { email, service, time, date, name } = doc;
         const data = {
           email,
           time,
