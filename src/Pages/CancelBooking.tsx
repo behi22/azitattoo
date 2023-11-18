@@ -5,7 +5,8 @@ import {
 } from '@ant-design/icons';
 import { Col, Result, Row, Spin } from 'antd';
 import React from 'react';
-import { deleteDocument } from '../Util/util';
+import { deleteDocument, fetchSingleDocument, getFullDate } from '../Util/util';
+import axios from 'axios';
 
 const CancelBooking: React.FC = () => {
   const [loading, setLoading] = React.useState(true);
@@ -15,8 +16,31 @@ const CancelBooking: React.FC = () => {
       const url = window.location.href;
       const id = url?.split('?')?.pop();
       try {
+        const doc = (await fetchSingleDocument('bookings', id)).data();
+        const { email, service, time, date } = doc;
+        const data = {
+          email,
+          time,
+          date: getFullDate(date),
+          service,
+          name
+        };
         await deleteDocument('bookings', id);
         setDeleted(true);
+        try {
+          axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
+            data,
+            type: 'sendgrid',
+            appName: 'AZITATTOO_CANCEL'
+          });
+          axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
+            data: { ...data, useDataEmailTo: true },
+            type: 'sendgrid',
+            appName: 'AZITATTOO_CANCEL_CLIENT'
+          });
+        } catch (error) {
+          console.log(error);
+        }
       } catch (error) {
         setDeleted(false);
       } finally {
