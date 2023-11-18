@@ -76,7 +76,11 @@ const BookingForm: React.FC = () => {
         address
       };
       // write to db
-      await addDocWithoutId('bookings', { ...data, date: date, id: uid });
+      const ref = await addDocWithoutId('bookings', {
+        ...data,
+        date: date,
+        id: uid
+      });
       // send email to Azi
       try {
         axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
@@ -92,7 +96,8 @@ const BookingForm: React.FC = () => {
         axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
           data: {
             ...data,
-            useDataEmailTo: true
+            useDataEmailTo: true,
+            id: ref.id
           },
           type: 'sendgrid',
           appName: 'AZITATTOO_CLIENT'

@@ -12,6 +12,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Booking from './Pages/Booking';
 import ConfirmedBooking from './Pages/ConfirmedBooking';
+import CancelBooking from './Pages/CancelBooking';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
             <Route path='contact' element={<Contact />} />
             <Route path='booking' element={<Booking />} />
             <Route path='booking/confirmed' element={<ConfirmedBooking />} />
+            <Route path='booking/cancel' element={<CancelBooking />} />
             <Route path='*' element={<NoPage />} />
           </Routes>
           <Footer />
