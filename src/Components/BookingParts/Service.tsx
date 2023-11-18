@@ -11,6 +11,7 @@ const Service: React.FC<ServiceProps> = ({ mainTitle, title, description }) => {
   const checked = storeService === mainTitle;
   React.useEffect(() => {
     window.scrollTo({ behavior: 'instant', top: 0 });
+    dispatch(changeService(null));
   }, []);
   return (
     <>

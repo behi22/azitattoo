@@ -94,7 +94,7 @@ const Booking: React.FC = () => {
         style={{ insetInlineStart: '3%', bottom: 25, left: 35 }}
         icon={<UpOutlined style={{ color: 'white' }} />}
       />
-      <Row justify={'center'} gutter={[0, 35]}>
+      <Row justify={'center'} gutter={[0, 50]}>
         <Col xs={24} sm={23} md={20}>
           <Steps current={currentStep} items={stepItems} />
         </Col>
@@ -115,36 +115,38 @@ const Booking: React.FC = () => {
           </Row>
         </Col>
         <Col xs={21} sm={18}>
-          {currentStep < stepItems.length - 1 && (
-            <Tooltip
-              title={
-                currentStep === 0
-                  ? isServiceChosen([service])
-                    ? ''
-                    : 'Select option(s) to proceed'
-                  : isServiceChosen([date, time])
-                    ? ''
-                    : 'Select option(s) to proceed'
-              }
-            >
-              <Button
-                type='primary'
-                onClick={() => next()}
-                disabled={
+          <Row justify={'center'} style={{ width: '100%' }}>
+            {currentStep > 0 && (
+              <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
+                Back
+              </Button>
+            )}
+            {currentStep < stepItems.length - 1 && (
+              <Tooltip
+                title={
                   currentStep === 0
-                    ? !isServiceChosen([service])
-                    : !isServiceChosen([date, time])
+                    ? isServiceChosen([service])
+                      ? ''
+                      : 'Select option(s) to proceed'
+                    : isServiceChosen([date, time])
+                      ? ''
+                      : 'Select option(s) to proceed'
                 }
               >
-                Next Step
-              </Button>
-            </Tooltip>
-          )}
-          {currentStep > 0 && (
-            <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
-              Previous Step
-            </Button>
-          )}
+                <Button
+                  type='primary'
+                  onClick={() => next()}
+                  disabled={
+                    currentStep === 0
+                      ? !isServiceChosen([service])
+                      : !isServiceChosen([date, time])
+                  }
+                >
+                  Continue
+                </Button>
+              </Tooltip>
+            )}
+          </Row>
         </Col>
       </Row>
     </div>
