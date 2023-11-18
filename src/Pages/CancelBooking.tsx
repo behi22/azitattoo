@@ -28,12 +28,12 @@ const CancelBooking: React.FC = () => {
         await deleteDocument('bookings', id);
         setDeleted(true);
         try {
-          axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
+          axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail/', {
             data,
             type: 'sendgrid',
             appName: 'AZITATTOO_CANCEL'
           });
-          axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
+          axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail/', {
             data: { ...data, useDataEmailTo: true },
             type: 'sendgrid',
             appName: 'AZITATTOO_CANCEL_CLIENT'
