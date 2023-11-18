@@ -1,6 +1,6 @@
 import { FirebaseOptions, initializeApp } from 'firebase/app';
 import 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, initializeFirestore } from 'firebase/firestore';
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: process.env.FIRE_BASE_API,
@@ -14,4 +14,6 @@ if (process.env.FIRE_BASE_MEASUREMENT_ID) {
   firebaseConfig.measurementId = process.env.FIRE_BASE_MEASUREMENT_ID;
 }
 export const app = initializeApp(firebaseConfig);
-export const firestore = getFirestore(app);
+export const firestore = initializeFirestore(app, {
+  experimentalForceLongPolling: true
+});
