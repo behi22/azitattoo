@@ -1,7 +1,13 @@
+import { Service } from './actions';
+
 export type BookingDateAndTime = {
   date: string;
   time: string;
 };
+
+export interface ServicesProps {
+  services: Service[];
+}
 
 export type ServiceProps = {
   mainTitle: string;
