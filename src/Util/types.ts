@@ -1,3 +1,9 @@
+import { LocationT } from '../Redux/features/location/location-slice';
+
+export type LocationHoursProps = {
+  locations?: LocationT[];
+};
+
 export type BookingDateAndTime = {
   date: string;
   time: string;
