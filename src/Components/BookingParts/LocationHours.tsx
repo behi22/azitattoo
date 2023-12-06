@@ -125,20 +125,23 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
         </Col>
         <Col span={3}></Col>
       </Row>
-      <Divider orientation='center' style={{}}></Divider>
-      <Row align='middle' justify='center'>
-        <Col span={3}></Col>
-        <Col span={3}>
+      <Divider orientation='center'></Divider>
+      <Row align='middle' justify='space-evenly' gutter={[30, 30]}>
+        <Col span={1}></Col>
+        <Col xs={22} md={4}>
           <h2>Location & Hours</h2>
         </Col>
-        <Col span={1}></Col>
-        <Col span={3}>
-          <Button type='primary' onClick={switchLocation}>
+        <Col offset={1} xs={23} md={5}>
+          <Button
+            type='primary'
+            shape='round'
+            style={{ height: 'auto', width: '80%', whiteSpace: 'normal' }}
+            onClick={switchLocation}
+          >
             Switch to {otherLocationName} Location
           </Button>
         </Col>
-        <Col span={1}></Col>
-        <Col span={5}>
+        <Col offset={1} xs={23} md={5}>
           {displayedLocations.map((location) => (
             <div key={location.id}>
               <strong>{location.name}</strong>
@@ -154,8 +157,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
             </div>
           ))}
         </Col>
-        <Col span={1}></Col>
-        <Col span={4}>
+        <Col offset={1} xs={24} md={5}>
           <ul>
             {displayedLocations.map((location) => (
               <div key={location.id}>
@@ -166,7 +168,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
             ))}
           </ul>
         </Col>
-        <Col span={3}></Col>
+        <Col span={1}></Col>
       </Row>
     </div>
   );

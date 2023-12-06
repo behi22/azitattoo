@@ -18,7 +18,6 @@ const Home: React.FC = () => {
         style={{ insetInlineStart: '3%', bottom: 25, left: 35 }}
         icon={<UpOutlined style={{ color: 'white' }} />}
       />
-      hi
     </div>
   );
 };
