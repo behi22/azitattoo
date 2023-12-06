@@ -25,9 +25,9 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
       <Row justify='space-around' align='top' gutter={[20, 20]}>
         <Col span={3}></Col>
         {services.map((service) => (
-          <Col flex='25%'>
+          <Col flex='25%' key={service.id}>
             <div></div>
-            <div key={service.id}>
+            <div>
               <a href={service.link}>
                 <img width={200} src={service.img}></img>
               </a>
