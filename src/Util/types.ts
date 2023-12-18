@@ -4,9 +4,22 @@ export type LocationHoursProps = {
   locations?: LocationT[];
 };
 
+export type Service = {
+  id: number;
+  img: string;
+  button: string;
+  title: string;
+  description: string;
+  link: string;
+};
+
 export type BookingDateAndTime = {
   date: string;
   time: string;
+};
+
+export type ServicesProps = {
+  services: Service[];
 };
 
 export type ServiceProps = {

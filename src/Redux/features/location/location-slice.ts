@@ -24,11 +24,11 @@ const locationSlice = createSlice({
   name: 'location',
   initialState: initialState,
   reducers: {
-    fetchLocation(state, action: PayloadAction<LocationT[]>) {
+    changeLocation(state, action: PayloadAction<LocationT[]>) {
       state.location = action.payload;
     }
   }
 });
 
 export default locationSlice.reducer;
-export const { fetchLocation } = locationSlice.actions;
+export const { changeLocation } = locationSlice.actions;

@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { LocationHoursProps } from '../../Util/types';
-import { Col, Row, Button, Divider } from 'antd';
-import { mapContainerStyle, center, initialZoom } from '../../Util/constants';
+import { Col, Row, Button } from 'antd';
+import {
+  mapContainerStyle,
+  initialCenter,
+  initialZoom
+} from '../../Util/constants';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import {
   LocationT,
-  fetchLocation
+  changeLocation
 } from '../../Redux/features/location/location-slice';
+import useScreenSize from '../../Hooks/screenSize';
 
 const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
+  const { width } = useScreenSize();
   const dispatch = useDispatch();
   const [map, setMap] = useState(null);
   const [selectedLocationIndex, setSelectedLocationIndex] = useState(0);
   const [userPosition, setUserPosition] = useState(null);
+  const [center, setCenter] = useState({
+    lat: initialCenter.lat,
+    lng: initialCenter.lng
+  });
+  const [mapKey, setMapKey] = useState(1);
 
   // Use useSelector to get the locations from the Redux store
   const locationsFromStore = useSelector(
@@ -49,9 +60,17 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
     setMap(map);
   };
 
-  const switchLocation = () => {
-    // Fetch locations based on the selected index
-    dispatch(fetchLocation([locations[selectedLocationIndex]]));
+  const switchLocation = (selectedLocation) => {
+    // Update the center of the map to the location's coordinates
+    const cLocationIndex = (selectedLocationIndex + 1) % locations.length;
+    const cLocation = locations[cLocationIndex];
+    setCenter({ lat: cLocation.lat, lng: cLocation.lng });
+
+    // Fetch locations based on the updated selected index
+    dispatch(changeLocation([locations[selectedLocationIndex]]));
+
+    // Force re-render by updating the map key
+    setMapKey((prevKey) => prevKey + 1);
 
     // Update the selected index for the next switch
     setSelectedLocationIndex((prevIndex) =>
@@ -97,10 +116,12 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
   };
 
   // Get the name of the other location
+  /*
   const otherLocationName =
     locations.length > 0
       ? locations[(selectedLocationIndex + 1) % locations.length].name
-      : '';
+    : ''; 
+  */
 
   return (
     <div style={{ minHeight: '100vh' }}>
@@ -112,12 +133,22 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
               mapContainerStyle={mapContainerStyle}
               center={center}
               zoom={initialZoom.num}
+              key={mapKey} // Key prop to force re-render
               onLoad={onMapLoad}
+              options={{
+                disableDefaultUI: true,
+                zoomControl: true,
+                maxZoom: 15,
+                minZoom: 2
+              }}
             >
               {displayedLocations.map((location) => (
                 <Marker
                   key={location.id}
                   position={{ lat: location.lat, lng: location.lng }}
+                  onClick={() =>
+                    switchLocation(locations[selectedLocationIndex])
+                  }
                 />
               ))}
             </GoogleMap>
@@ -125,23 +156,27 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
         </Col>
         <Col span={3}></Col>
       </Row>
-      <Divider orientation='center'></Divider>
-      <Row align='middle' justify='space-evenly' gutter={[30, 30]}>
+      <br />
+      <Row align='middle' justify='center' gutter={[30, 30]}>
         <Col span={1}></Col>
-        <Col xs={22} md={4}>
+        <Col xs={22} lg={4}>
           <h2>Location & Hours</h2>
         </Col>
-        <Col offset={1} xs={23} md={5}>
+        <Col offset={1} xs={23} lg={5}>
           <Button
             type='primary'
             shape='round'
-            style={{ height: 'auto', width: '80%', whiteSpace: 'normal' }}
-            onClick={switchLocation}
+            style={{
+              height: 'auto',
+              width: width > 991 ? '80%' : width > 600 ? '30%' : '50%',
+              whiteSpace: 'normal'
+            }}
+            onClick={() => switchLocation(locations[selectedLocationIndex])}
           >
-            Switch to {otherLocationName} Location
+            Switch Location
           </Button>
         </Col>
-        <Col offset={1} xs={23} md={5}>
+        <Col offset={1} xs={23} lg={5}>
           {displayedLocations.map((location) => (
             <div key={location.id}>
               <strong>{location.name}</strong>
@@ -157,7 +192,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
             </div>
           ))}
         </Col>
-        <Col offset={1} xs={24} md={5}>
+        <Col offset={1} xs={24} lg={5}>
           <ul>
             {displayedLocations.map((location) => (
               <div key={location.id}>

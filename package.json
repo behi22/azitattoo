@@ -20,7 +20,7 @@
     "@ant-design/icons": "^5.2.6",
     "@react-google-maps/api": "^2.19.2",
     "@reduxjs/toolkit": "^1.9.7",
-    "antd": "^5.11.1",
+    "antd": "^5.11.5",
     "axios": "^1.6.2",
     "compression": "^1.7.4",
     "dotenv-webpack": "^8.0.1",
