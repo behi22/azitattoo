@@ -4,7 +4,7 @@ import { changeRoute } from '../Redux/features/app/app-slice';
 import { Button, Col, FloatButton, Row, Steps, Tag, Tooltip } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
 import { ServiceProps } from '../Util/types';
-import Service from '../Components/BookingParts/Service';
+import Service from '../Components/Service';
 import { useAppSelector } from '../Redux/hooks';
 import { isServiceChosen } from '../Util/util';
 import DateAndTime from '../Components/BookingParts/DateAndTime';

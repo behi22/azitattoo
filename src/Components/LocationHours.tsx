@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { LocationHoursProps } from '../../Util/types';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../Redux/hooks';
+import { LocationHoursProps } from '../Util/types';
 import { Col, Row, Button } from 'antd';
 import {
   mapContainerStyle,
   initialCenter,
   initialZoom
-} from '../../Util/constants';
+} from '../Util/constants';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import {
   LocationT,
   changeLocation
-} from '../../Redux/features/location/location-slice';
-import useScreenSize from '../../Hooks/screenSize';
+} from '../Redux/features/location/location-slice';
+import useScreenSize from '../Hooks/screenSize';
 
 const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
   const { width } = useScreenSize();
@@ -26,8 +27,8 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
   });
   const [mapKey, setMapKey] = useState(1);
 
-  // Use useSelector to get the locations from the Redux store
-  const locationsFromStore = useSelector(
+  // Use useAppSelector to get the locations from the Redux store
+  const locationsFromStore = useAppSelector(
     (state: { location: { location: LocationT[] } }) => state.location.location
   );
 

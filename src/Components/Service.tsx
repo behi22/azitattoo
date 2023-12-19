@@ -1,9 +1,9 @@
 import React from 'react';
-import { ServiceProps } from '../../Util/types';
+import { ServiceProps } from '../Util/types';
 import { Card, Checkbox, Typography } from 'antd';
 import { useDispatch } from 'react-redux';
-import { changeService } from '../../Redux/features/booking/booking-slice';
-import { useAppSelector } from '../../Redux/hooks';
+import { changeService } from '../Redux/features/booking/booking-slice';
+import { useAppSelector } from '../Redux/hooks';
 
 const Service: React.FC<ServiceProps> = ({ mainTitle, title, description }) => {
   const dispatch = useDispatch();

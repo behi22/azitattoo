@@ -1,7 +1,7 @@
 import { LocationT } from '../Redux/features/location/location-slice';
 
 export type LocationHoursProps = {
-  locations?: LocationT[];
+  locations: LocationT[];
 };
 
 export type Service = {
