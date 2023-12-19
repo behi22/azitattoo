@@ -36,7 +36,7 @@ export const days = [
 export const fullServices = [
   {
     id: 0,
-    img: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    img: '/src/Pics/MicroBlading.png',
     title: 'MicroBlading',
     button: 'Perfect Brows Awaits',
     description:
@@ -45,7 +45,7 @@ export const fullServices = [
   },
   {
     id: 1,
-    img: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    img: '/src/Pics/LipBlush.png',
     title: 'LipBlush',
     button: 'Luscious Lips Awaits',
     description:
@@ -54,7 +54,7 @@ export const fullServices = [
   },
   {
     id: 2,
-    img: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    img: '/src/Pics/Tattoo.png',
     title: 'Tattoo',
     button: 'Ink Your Vision',
     description:
