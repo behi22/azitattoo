@@ -1,5 +1,5 @@
 import React from 'react';
-import { ServicesProps } from '../../Util/types';
+import { ServicesProps } from '../Util/types';
 import { Button, Col, Row } from 'antd';
 
 const Services: React.FC<ServicesProps> = ({ services }) => {
