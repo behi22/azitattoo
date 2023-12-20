@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { Row, Col, Button, Typography } from 'antd';
 
 const Banner: React.FC = () => {
@@ -40,11 +40,11 @@ const Banner: React.FC = () => {
       <br />
       <Row justify='start' gutter={[15, 15]} style={{ width: '100%' }}>
         <Col offset={3} xs={21} md={2}>
-          <Link to='/Services.tsx'>
+          <ScrollLink to='services-section' smooth={true} duration={500}>
             <Button shape='round' type='primary'>
               See Beauty Services
             </Button>
-          </Link>
+          </ScrollLink>
         </Col>
         <Col offset={3}>
           <a href='/Contact'>
