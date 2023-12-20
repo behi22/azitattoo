@@ -1,10 +1,11 @@
 import React from 'react';
-import { ServicesProps } from '../../Util/types';
+import { ServicesProps } from '../Util/types';
 import { Button, Col, Row } from 'antd';
 
 const Services: React.FC<ServicesProps> = ({ services }) => {
   return (
-    <div style={{ minHeight: '100vh' }}>
+    // fixed redundancy issue by removing div with styling!
+    <>
       <Row justify='center'>
         <Col span={1}></Col>
         <Col span={22}>
@@ -41,7 +42,7 @@ const Services: React.FC<ServicesProps> = ({ services }) => {
           </Col>
         ))}
       </Row>
-    </div>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { changeRoute } from '../Redux/features/app/app-slice';
 import {
   FloatButton,
-  Modal,
+  /* Modal,*/
   Row,
   Col,
   Form,
@@ -13,9 +13,11 @@ import {
 } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { UpOutlined } from '@ant-design/icons';
-import Services from '../Components/BookingParts/Services';
+import LocationHours from '../Components/LocationHours';
+import { location1, location2 } from '../Util/constants';
+import Services from '../Components/Services';
 import { fullServices } from '../Util/constants';
-import axios from 'axios';
+//import axios from 'axios';
 
 const { Text } = Typography;
 
@@ -34,16 +36,17 @@ const Contact: React.FC = () => {
   const [form] = useForm();
   const [submitLoading, setSubmitLoading] = React.useState(false);
   const onFinish = (values: any) => {
+    /* 
     setSubmitLoading(true);
     axios
-      .post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
+      .post('//add link here//', {
         data: {
           name: values.name,
           email: values.email,
           message: values.message
         },
         type: 'sendgrid',
-        appName: 'WWT'
+        appName: 'Azitattoo'
       })
       .then((response) => {
         if (response.data.status === 'success') {
@@ -67,6 +70,10 @@ const Contact: React.FC = () => {
       .finally(() => {
         setSubmitLoading(false);
       });
+      */
+    console.log(values.name);
+    console.log(values.email);
+    console.log(values.message);
   };
 
   const dispatch = useDispatch();
@@ -124,6 +131,9 @@ const Contact: React.FC = () => {
         </Col>
       </Row>
       <Services services={fullServices} />
+      <br />
+      <LocationHours locations={[location1, location2]}></LocationHours>
+      <br />
       <FloatButton.BackTop
         style={{ insetInlineStart: '3%', bottom: 25, left: 35 }}
         icon={<UpOutlined style={{ color: 'white' }} />}
