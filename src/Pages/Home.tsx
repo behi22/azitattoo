@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux';
 import { FloatButton } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
 import Banner from '../Components/Home/Banner';
+import Benefits from '../Components/Home/Benefits';
+import { fullBenefits } from '../Util/constants';
 import Services from '../Components/Services';
 import { fullServices } from '../Util/constants';
 import LocationHours from '../Components/LocationHours';
@@ -17,6 +19,8 @@ const Home: React.FC = () => {
   return (
     <div style={{ minHeight: '100vh' }}>
       <Banner />
+      <Benefits benefits={fullBenefits} />
+      <br />
       <div id='services-section'>
         <Services services={fullServices} />
       </div>

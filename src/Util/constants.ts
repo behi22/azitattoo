@@ -103,3 +103,30 @@ export const fullServices = [
     link: '/Tattoo'
   }
 ];
+
+export const fullBenefits = [
+  {
+    id: 1,
+    title: 'PHI-ACADEMY CERTIFIED EXPERTISE',
+    text: 'Discover beauty with confidence. Our Phi-Academy certification ensures you are in expert hands.',
+    icon: '/assets/Pics/Cert.png'
+  },
+  {
+    id: 2,
+    title: 'FREE CONSULTATION & A PLAN MADE JUST FOR YOU',
+    text: 'Have questions? Get clarity in a free consultation with Azita. It is personal, it is about you.',
+    icon: '/assets/Pics/Consultation.png'
+  },
+  {
+    id: 3,
+    title: 'CUTTING-EDGE TECHNOLOGY',
+    text: 'We offer Candela™ GentleMax Pro systems for our laser treatments. Beyond cutting-edge technology, we tailor treatments to celebrate your unique beauty.',
+    icon: '/assets/Pics/Tech.png'
+  },
+  {
+    id: 4,
+    title: 'PROLONG YOUR BEAUTY WITH TOUCH UPS',
+    text: 'In addition to our personalzied after-care plans, our touch-up treatments ensure your permanent makeup lasts longer with you as the first day.',
+    icon: '/assets/Pics/Beauty.png'
+  }
+];
