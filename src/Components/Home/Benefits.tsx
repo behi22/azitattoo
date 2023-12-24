@@ -6,20 +6,20 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
   return (
     <>
       <Row align='middle' justify='center' style={{ textAlign: 'center' }}>
-        <Col span={6}></Col>
+        <Col span={6} />
         <Col span={12}>
           <h2>PLACE YOUR CONFIDENCE IN THE HANDS OF OUR BEAUTY EXPEDITION</h2>
         </Col>
-        <Col span={6}></Col>
+        <Col span={6} />
       </Row>
       <Row align='middle' justify='center' style={{ textAlign: 'center' }}>
-        <Col span={6}></Col>
+        <Col span={6} />
         <Col span={12}>
           <h3>
             INDULGE IN NOTHING BUT THE BEST, DELIVERED WITH PASSION BY AZITA
           </h3>
         </Col>
-        <Col span={6}></Col>
+        <Col span={6} />
       </Row>
       <Row
         justify='space-evenly'
@@ -30,7 +30,7 @@ const Benefits: React.FC<BenefitsProps> = ({ benefits }) => {
         {benefits.map((benefit) => (
           <Col xs={20} md={5} key={benefit.id}>
             <div>
-              <Col span={4}></Col>
+              <Col span={4} />
               <div>
                 <img width={'50%'} src={benefit.icon}></img>
                 <h4>{benefit.title}</h4>
