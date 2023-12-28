@@ -125,7 +125,8 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
   */
 
   return (
-    <div style={{ minHeight: '100vh' }}>
+    // fixed redundancy issue by removing div with styling!
+    <>
       <Row justify='center'>
         <Col span={3}></Col>
         <Col span={18}>
@@ -160,10 +161,10 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
       <br />
       <Row align='middle' justify='center' gutter={[30, 30]}>
         <Col span={1}></Col>
-        <Col xs={22} lg={4}>
+        <Col xs={22} lg={4} style={{ textAlign: 'center' }}>
           <h2>Location & Hours</h2>
         </Col>
-        <Col offset={1} xs={23} lg={5}>
+        <Col offset={1} xs={23} lg={5} style={{ textAlign: 'center' }}>
           <Button
             type='primary'
             shape='round'
@@ -177,7 +178,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
             Switch Location
           </Button>
         </Col>
-        <Col offset={1} xs={23} lg={5}>
+        <Col offset={1} xs={23} lg={5} style={{ textAlign: 'center' }}>
           {displayedLocations.map((location) => (
             <div key={location.id}>
               <strong>{location.name}</strong>
@@ -193,7 +194,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
             </div>
           ))}
         </Col>
-        <Col offset={1} xs={24} lg={5}>
+        <Col offset={1} xs={24} lg={5} style={{ textAlign: 'center' }}>
           <ul>
             {displayedLocations.map((location) => (
               <div key={location.id}>
@@ -206,7 +207,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
         </Col>
         <Col span={1}></Col>
       </Row>
-    </div>
+    </>
   );
 };
 
