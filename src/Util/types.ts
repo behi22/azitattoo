@@ -1,7 +1,12 @@
 import { LocationT } from '../Redux/features/location/location-slice';
+import { Benefit } from '../Redux/features/benefit/benefit-slice';
 
 export type LocationHoursProps = {
   locations: LocationT[];
+};
+
+export type BenefitsProps = {
+  benefits: Benefit[];
 };
 
 export type Service = {
