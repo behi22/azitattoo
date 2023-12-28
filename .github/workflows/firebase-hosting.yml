@@ -30,6 +30,7 @@ jobs:
           echo FIRE_BASE_MESSAGING_SENDER_ID=${{ secrets.FIRE_BASE_MESSAGING_SENDER_ID }} >> .env
           echo FIRE_BASE_APP_ID=${{ secrets.FIRE_BASE_APP_ID }} >> .env
           echo FIRE_BASE_MEASUREMENT_ID=${{ secrets.FIRE_BASE_MEASUREMENT_ID }} >> .env
+          echo REACT_APP_GOOGLE_MAPS_API=${{secrets.REACT_APP_GOOGLE_MAPS_API}} >> .env
 
       - run: npm i
       - run: npm install -g firebase-tools
