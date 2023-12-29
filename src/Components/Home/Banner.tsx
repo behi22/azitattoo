@@ -1,54 +1,62 @@
 import React from 'react';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { Row, Col, Button, Typography } from 'antd';
+import useScreenSize from '../../Hooks/screenSize';
 
 const Banner: React.FC = () => {
   const bannerStyle: React.CSSProperties = {
     position: 'relative',
-    minHeight: '100vh',
-    background: 'url("/assets/Pics/Banner.png")',
+    height: '575px',
     backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    color: 'black',
+    backgroundPosition: 'top',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center'
   };
 
+  const scSize = useScreenSize();
+
   const { Text } = Typography;
 
   return (
-    <div style={bannerStyle}>
+    <div style={bannerStyle} className='home_banner'>
       <Row justify='start' style={{ width: '100%' }}>
-        <Col offset={3} span={13}>
+        <Col offset={3} xs={21} lg={10}>
           <Text strong style={{ whiteSpace: 'pre-wrap' }}>
-            <h3>Unrestrained Beauty Beyond Limits</h3>
-          </Text>
-        </Col>
-      </Row>
-      <Row justify='start' style={{ width: '100%' }}>
-        <Col offset={3} xs={12} sm={15} md={8}>
-          <Text style={{ whiteSpace: 'pre-wrap' }}>
-            <h5>
-              Explore our certified beauty services in Microblading, Lip Blush,
-              and Tattoo, available at our convenient locations in Vancouver and
-              Burnaby.
-            </h5>
+            <span style={{ color: 'white', fontSize: '3.5em' }}>
+              Beauty Beyond Limits
+            </span>
           </Text>
         </Col>
       </Row>
       <br />
+      <Row justify='start' style={{ width: '100%' }}>
+        <Col offset={3} xs={15} md={8}>
+          <Text style={{ whiteSpace: 'pre-wrap' }}>
+            <span style={{ color: 'white', fontSize: '1.3em' }}>
+              Explore our certified beauty services in Microblading, Lip Blush,
+              and Tattoo, available at our convenient locations in Vancouver and
+              Burnaby.
+            </span>
+          </Text>
+        </Col>
+      </Row>
+      <br />
+      <br />
+      <br />
       <Row justify='start' gutter={[15, 15]} style={{ width: '100%' }}>
-        <Col offset={3} xs={21} md={2}>
+        <Col offset={3}>
           <ScrollLink to='services-section' smooth={true} duration={500}>
-            <Button shape='round' type='primary'>
+            <Button shape='round' type='primary' size='large'>
               See Beauty Services
             </Button>
           </ScrollLink>
         </Col>
-        <Col offset={3}>
-          <a href='/Contact'>
-            <Button shape='round'>Get In Touch</Button>
+        <Col offset={scSize.width > 404 ? 0 : 3}>
+          <a href='/booking'>
+            <Button shape='round' size='large'>
+              Book Now
+            </Button>
           </a>
         </Col>
       </Row>

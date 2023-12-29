@@ -11,15 +11,7 @@ const Bio: React.FC = () => {
         gutter={{ xs: 5, md: 30 }}
         style={{ width: '100%' }}
       >
-        <Col
-          offset={1}
-          xs={18}
-          /* we can always remove md if the final picture doesn't look good! */
-          md={10}
-          lg={8}
-          xl={7}
-          xxl={6}
-        >
+        <Col offset={1} xs={18} lg={8}>
           <Image
             alt='Azita'
             preview={false}
@@ -33,11 +25,14 @@ const Bio: React.FC = () => {
           />
         </Col>
         <Col span={1} />
-        <Col xs={18} md={12}>
-          <h3 style={{ fontSize: '20px' }}>
+        <Col xs={18} lg={12}>
+          <br />
+          <span style={{ fontSize: '1.7em', fontFamily: 'serif' }}>
             MASTERING THE ART OF BEAUTY IN DOWNTOWN VANCOUVER
-          </h3>
-          <p style={{ fontSize: '16px' }}>
+          </span>
+          <br />
+          <br />
+          <p style={{ fontSize: '1.2em', lineHeight: '2em' }}>
             Meet Azita, a Vancouver based Phi Academy certified Beauty Artist
             with Phi-Brows, Phi-Contour and Phi-Lash certifications. Experience
             specialized PMU (permanent makeup), Microblading and Candela
@@ -48,7 +43,7 @@ const Bio: React.FC = () => {
             extensions come to life, all with an unmatched attention to detail
           </p>
           <ScrollLink to='services-section' smooth={true} duration={500}>
-            <Button shape='round' type='primary'>
+            <Button shape='round' type='primary' size='large'>
               Discover Our Beauty Services
             </Button>
           </ScrollLink>

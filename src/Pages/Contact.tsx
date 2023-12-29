@@ -36,44 +36,7 @@ const Contact: React.FC = () => {
   const [form] = useForm();
   const [submitLoading, setSubmitLoading] = React.useState(false);
   const onFinish = (values: any) => {
-    /* 
-    setSubmitLoading(true);
-    axios
-      .post('//add link here//', {
-        data: {
-          name: values.name,
-          email: values.email,
-          message: values.message
-        },
-        type: 'sendgrid',
-        appName: 'Azitattoo'
-      })
-      .then((response) => {
-        if (response.data.status === 'success') {
-          Modal.success({
-            title: 'Thank You For Reaching Out To Us!',
-            content:
-              'Your inquiry is important to us, and we want to assure you that your message has been received and is being reviewed by our team. We will get back to you as soon as possible to provide the information or assistance you are seeking.'
-          });
-          form.resetFields();
-        } else {
-          Modal.error({
-            title: 'Failed To Send Your Message!',
-            content:
-              'Sorry, looks like something went wrong. Please try again later!'
-          });
-        }
-      })
-      .catch((_error) => {
-        console.log('unsuccessful!');
-      })
-      .finally(() => {
-        setSubmitLoading(false);
-      });
-      */
-    console.log(values.name);
-    console.log(values.email);
-    console.log(values.message);
+    console.log(values);
   };
 
   const dispatch = useDispatch();
@@ -84,17 +47,17 @@ const Contact: React.FC = () => {
 
   return (
     <div style={{ minHeight: '100vh' }}>
-      <Row justify={'center'} gutter={[30, 30]}>
-        <Col span={14} style={{ textAlign: 'center' }}>
+      <Row justify={'center'}>
+        <Col xs={20} lg={14} style={{ textAlign: 'center' }}>
           <Typography.Title level={2}>Contact Us</Typography.Title>
         </Col>
-        <Col span={14} style={{ textAlign: 'center' }}>
-          <Text strong>
+        <Col xs={20} lg={14} style={{ textAlign: 'center' }}>
+          <Text style={{ fontSize: '1.12em' }}>
             If there's anything on your mind, feel free to get in contact with
             us
           </Text>
         </Col>
-        <Col span={14}>
+        <Col xs={20} lg={14} style={{ marginTop: '25px' }}>
           <Form
             form={form}
             name='nest-messages'

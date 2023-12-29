@@ -25,9 +25,12 @@ const Home: React.FC = () => {
       <br />
       <Bio />
       <br />
+      <br />
       <div id='services-section'>
         <Services services={fullServices} />
       </div>
+      <br />
+      <br />
       <br />
       <LocationHours locations={[location1, location2]} />
       <br />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../Redux/hooks';
 import { LocationHoursProps } from '../Util/types';
-import { Col, Row, Button } from 'antd';
+import { Col, Row, Button, Space, Typography } from 'antd';
 import {
   mapContainerStyle,
   initialCenter,
@@ -124,43 +124,7 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
     : ''; 
   */
 
-  return (
-    // fixed redundancy issue by removing div with styling!
-    <>
-      <Row justify='center'>
-        <Col span={3}></Col>
-        <Col span={18}>
-          <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API}>
-            <GoogleMap
-              mapContainerStyle={mapContainerStyle}
-              center={center}
-              zoom={initialZoom.num}
-              key={mapKey} // Key prop to force re-render
-              onLoad={onMapLoad}
-              options={{
-                disableDefaultUI: true,
-                zoomControl: true,
-                maxZoom: 15,
-                minZoom: 2
-              }}
-            >
-              {displayedLocations.map((location) => (
-                <Marker
-                  key={location.id}
-                  position={{ lat: location.lat, lng: location.lng }}
-                  onClick={() =>
-                    switchLocation(locations[selectedLocationIndex])
-                  }
-                />
-              ))}
-            </GoogleMap>
-          </LoadScript>
-        </Col>
-        <Col span={3}></Col>
-      </Row>
-      <br />
-      <Row align='middle' justify='center' gutter={[30, 30]}>
-        <Col span={1}></Col>
+  /**<Row align='middle' justify='center' gutter={[30, 30]}>
         <Col xs={22} lg={4} style={{ textAlign: 'center' }}>
           <h2>Location & Hours</h2>
         </Col>
@@ -183,11 +147,6 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
             <div key={location.id}>
               <strong>{location.name}</strong>
               <p>{location.address}</p>
-              {/* This code is for using the Directions API!
-              <a href='#' onClick={getDirections}>
-                Get Directions
-              </a> 
-              */}
               <a target='_blank' href={location.link}>
                 Get Directions
               </a>
@@ -205,7 +164,87 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
             ))}
           </ul>
         </Col>
-        <Col span={1}></Col>
+      </Row> */
+
+  return (
+    // fixed redundancy issue by removing div with styling!
+    <>
+      <Row justify={'center'}>
+        <Col span={21}>
+          <h1>Location & Hours</h1>
+        </Col>
+      </Row>
+      <br />
+      <Row justify='center'>
+        <Col span={21}>
+          <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API}>
+            <GoogleMap
+              mapContainerStyle={mapContainerStyle}
+              center={center}
+              zoom={initialZoom.num}
+              key={mapKey} // Key prop to force re-render
+              onLoad={onMapLoad}
+              options={{
+                disableDefaultUI: true,
+                zoomControl: true,
+                minZoom: 2
+              }}
+            >
+              {displayedLocations.map((location) => (
+                <Marker
+                  key={location.id}
+                  position={{ lat: location.lat, lng: location.lng }}
+                />
+              ))}
+            </GoogleMap>
+          </LoadScript>
+        </Col>
+      </Row>
+      <br />
+      <br />
+      <Row justify={'center'}>
+        <Col xs={21}>
+          <Row style={{ width: '100%' }} gutter={[0, 20]}>
+            <Col xs={24}>
+              <Row justify={'space-between'} align={'middle'}>
+                <Typography.Text style={{ fontSize: '1.1em' }}>
+                  <strong style={{ fontWeight: 'bolder' }}>City</strong>:{' '}
+                  {locations[selectedLocationIndex].name}
+                </Typography.Text>
+                <Button
+                  type='primary'
+                  shape='round'
+                  style={{
+                    height: 'auto'
+                  }}
+                  onClick={() =>
+                    switchLocation(locations[selectedLocationIndex])
+                  }
+                >
+                  Switch Location
+                </Button>
+              </Row>
+            </Col>
+            <Col xs={24}>
+              <Typography.Text>
+                Address: {locations[selectedLocationIndex].address}
+              </Typography.Text>
+              <Typography.Text style={{ marginLeft: '15px' }}>
+                <a target='_blank' href={locations[selectedLocationIndex].link}>
+                  Get Directions
+                </a>
+              </Typography.Text>
+            </Col>
+            <Col xs={24}>
+              <Typography.Text>
+                Hours:{' '}
+                {locations[selectedLocationIndex].name === 'Vancouver'
+                  ? 'Monday, Tuesday and Wednesday: 11:00 am - 6:00 pm (Appointment Only)'
+                  : 'Thursday, Friday and Saturday: 11:00 am - 6:00 pm (Appointment Only)'}
+              </Typography.Text>
+            </Col>
+          </Row>
+        </Col>
       </Row>
     </>
   );

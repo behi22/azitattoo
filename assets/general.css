@@ -1,0 +1,38 @@
+.mobile-nav-content {
+  display: none;
+}
+
+.desktopMenu > * {
+  margin: 0px 4.5% !important;
+}
+
+.desktopMenu {
+  display: flex !important;
+}
+
+.ant-float-btn-body {
+  background-color: black !important;
+}
+
+.ant-float-btn-body:hover {
+  background-color: black !important;
+}
+
+.serviceCard {
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .mobile-nav-content {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .desktopMenu {
+    display: none !important;
+  }
+
+  .getintouch {
+    font-size: 2.2em;
+  }
+}
