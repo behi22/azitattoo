@@ -1,0 +1,10 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.home_banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/assets/Pics/Banner.png);
+}

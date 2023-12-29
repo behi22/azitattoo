@@ -1,46 +1,49 @@
 import React from 'react';
 import { ServicesProps } from '../Util/types';
-import { Button, Col, Row } from 'antd';
+import { Button, Col, Row, Typography } from 'antd';
 
 const Services: React.FC<ServicesProps> = ({ services }) => {
   return (
     // fixed redundancy issue by removing div with styling!
     <>
       <Row justify='center'>
-        <Col span={1}></Col>
-        <Col span={22}>
-          <h2>Uncover Our Variety of Services</h2>
+        <Col span={21}>
+          <h1>Uncover Our Variety of Services</h1>
         </Col>
-        <Col span={1}></Col>
       </Row>
       <Row justify='center'>
-        <Col span={1}></Col>
-        <Col span={22}>
-          <h3>
+        <Col span={21}>
+          <Typography.Text style={{ fontSize: '1.2em' }}>
             Experience our customized precision beauty treatments designed
             exclusively for you.
-          </h3>
+          </Typography.Text>
         </Col>
-        <Col span={1}></Col>
       </Row>
-      <Row justify='space-evenly' align='top' gutter={[30, 30]}>
-        {services.map((service) => (
-          <Col xs={21} md={7} key={service.id}>
-            <div>
-              <Col span={3}></Col>
-              <div>
-                <a href={service.link}>
-                  <img width={'75%'} src={service.img}></img>
-                </a>
-                <h4>{service.title}</h4>
-                <p>{service.description}</p>
-                <Button type='primary' href={service.link}>
-                  {service.button}
-                </Button>
-              </div>
-            </div>
-          </Col>
-        ))}
+      <br />
+      <br />
+      <Row justify={'center'}>
+        <Col span={21}>
+          <Row justify='space-evenly' align='top' gutter={[10, 30]}>
+            {services.map((service) => (
+              <Col xs={21} md={7} key={service.id}>
+                <div>
+                  <a href={service.link}>
+                    <img
+                      width={'75%'}
+                      src={service.img}
+                      style={{ borderRadius: '10px' }}
+                    ></img>
+                  </a>
+                  <h3>{service.title}</h3>
+                  <p style={{ fontSize: '1.1em' }}>{service.description}</p>
+                  <Button type='primary' href={service.link}>
+                    {service.button}
+                  </Button>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Col>
       </Row>
     </>
   );
