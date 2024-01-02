@@ -41,3 +41,23 @@ export type Booking = {
   notes: string;
   id: string;
 } & BookingDateAndTime;
+
+export type work = {
+  title: string;
+  txt: string;
+  pics: string[];
+};
+
+export type TreatmentProps = {
+  treatment: {
+    title: string;
+    titleUnderline: string;
+    bannerTxt: string;
+    bannerPic: string;
+    infoTitle: string;
+    infoTxt: string;
+    infoPic: string;
+    journey: [string, string, string];
+    pastWork?: work;
+  };
+};
