@@ -9,7 +9,8 @@ import {
   Form,
   Typography,
   Input,
-  Button
+  Button,
+  notification
 } from 'antd';
 import { useForm } from 'antd/es/form/Form';
 import { UpOutlined } from '@ant-design/icons';
@@ -34,6 +35,7 @@ const validateMessages = {
 };
 
 const Contact: React.FC = () => {
+  const [api, contextHolder] = notification.useNotification();
   const [form] = useForm();
   const [submitLoading, setSubmitLoading] = React.useState(false);
   const onFinish = (values: any) => {
@@ -45,11 +47,18 @@ const Contact: React.FC = () => {
         company: 'N/A',
         role: 'N/A',
         message: values.message,
-        useDataEmail: true,
+        useDataEmailTo: 'true',
         emailTo: 'info@azitattoobeauty.com'
       },
       type: 'sendgrid',
       appName: 'WWT'
+    });
+    setSubmitLoading(false);
+    form.resetFields();
+    api.success({
+      message:
+        'Successfully sent your message. We will get back to you shortly.',
+      placement: 'top'
     });
   };
 
@@ -61,6 +70,7 @@ const Contact: React.FC = () => {
 
   return (
     <div style={{ minHeight: '100vh' }}>
+      {contextHolder}
       <Row justify={'center'}>
         <Col xs={20} lg={14} style={{ textAlign: 'center' }}>
           <Typography.Title level={2}>Contact Us</Typography.Title>
