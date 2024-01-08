@@ -6,7 +6,8 @@ import { Col, Row, Button, Space, Typography } from 'antd';
 import {
   mapContainerStyle,
   initialCenter,
-  initialZoom
+  initialZoom,
+  colors
 } from '../Util/constants';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import {
@@ -171,7 +172,13 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
     <>
       <Row justify={'center'}>
         <Col span={21}>
-          <h1>Location & Hours</h1>
+          <Row
+            style={{ width: '100%' }}
+            justify={'space-between'}
+            align={'middle'}
+          >
+            <h1>Location & Hours</h1>
+          </Row>
         </Col>
       </Row>
       <br />
@@ -204,44 +211,84 @@ const LocationHours: React.FC<LocationHoursProps> = ({ locations }) => {
       <br />
       <Row justify={'center'}>
         <Col xs={21}>
-          <Row style={{ width: '100%' }} gutter={[0, 20]}>
-            <Col xs={24}>
-              <Row justify={'space-between'} align={'middle'}>
-                <Typography.Text style={{ fontSize: '1.1em' }}>
-                  <strong style={{ fontWeight: 'bolder' }}>City</strong>:{' '}
-                  {locations[selectedLocationIndex].name}
-                </Typography.Text>
-                <Button
-                  type='primary'
-                  shape='round'
-                  style={{
-                    height: 'auto'
-                  }}
-                  onClick={() =>
-                    switchLocation(locations[selectedLocationIndex])
-                  }
-                >
-                  Switch Location
-                </Button>
+          <Button
+            type='primary'
+            shape='round'
+            style={
+              {
+                // height: 'auto'
+              }
+            }
+            onClick={() => switchLocation(locations[selectedLocationIndex])}
+          >
+            Switch Map Location
+          </Button>
+        </Col>
+        <br />
+        <br />
+        <br />
+        <br />
+        <Col xs={21}>
+          <Row
+            justify={'space-between'}
+            style={{ width: '100%' }}
+            gutter={[10, 30]}
+          >
+            <Col xs={24} xl={12}>
+              <Row style={{ width: '100%' }} gutter={[0, 20]}>
+                <Col xs={24}>
+                  <Typography.Text style={{ fontSize: '1.1em' }}>
+                    <strong style={{ fontWeight: 'bolder' }}>City</strong>:{' '}
+                    {locations[0].name}
+                  </Typography.Text>
+                </Col>
+                <Col xs={24}>
+                  <Typography.Text>
+                    Address: {locations[0].address}
+                  </Typography.Text>
+                  <Typography.Text style={{ marginLeft: '15px' }}>
+                    <a target='_blank' href={locations[0].link}>
+                      Get Directions
+                    </a>
+                  </Typography.Text>
+                </Col>
+                <Col xs={24}>
+                  <Typography.Text>
+                    Hours:{' '}
+                    {locations[0].name === 'Vancouver'
+                      ? 'Monday, Tuesday and Wednesday: 11:00 am - 6:00 pm (Appointment Only)'
+                      : 'Thursday, Friday and Saturday: 11:00 am - 6:00 pm (Appointment Only)'}
+                  </Typography.Text>
+                </Col>
               </Row>
             </Col>
-            <Col xs={24}>
-              <Typography.Text>
-                Address: {locations[selectedLocationIndex].address}
-              </Typography.Text>
-              <Typography.Text style={{ marginLeft: '15px' }}>
-                <a target='_blank' href={locations[selectedLocationIndex].link}>
-                  Get Directions
-                </a>
-              </Typography.Text>
-            </Col>
-            <Col xs={24}>
-              <Typography.Text>
-                Hours:{' '}
-                {locations[selectedLocationIndex].name === 'Vancouver'
-                  ? 'Monday, Tuesday and Wednesday: 11:00 am - 6:00 pm (Appointment Only)'
-                  : 'Thursday, Friday and Saturday: 11:00 am - 6:00 pm (Appointment Only)'}
-              </Typography.Text>
+            <Col xs={24} xl={12}>
+              <Row style={{ width: '100%' }} gutter={[0, 20]}>
+                <Col xs={24}>
+                  <Typography.Text style={{ fontSize: '1.1em' }}>
+                    <strong style={{ fontWeight: 'bolder' }}>City</strong>:{' '}
+                    {locations[1].name}
+                  </Typography.Text>
+                </Col>
+                <Col xs={24}>
+                  <Typography.Text>
+                    Address: {locations[1].address}
+                  </Typography.Text>
+                  <Typography.Text style={{ marginLeft: '15px' }}>
+                    <a target='_blank' href={locations[1].link}>
+                      Get Directions
+                    </a>
+                  </Typography.Text>
+                </Col>
+                <Col xs={24}>
+                  <Typography.Text>
+                    Hours:{' '}
+                    {locations[1].name === 'Vancouver'
+                      ? 'Monday, Tuesday and Wednesday: 11:00 am - 6:00 pm (Appointment Only)'
+                      : 'Thursday, Friday and Saturday: 11:00 am - 6:00 pm (Appointment Only)'}
+                  </Typography.Text>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Col>

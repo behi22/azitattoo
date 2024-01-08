@@ -107,33 +107,33 @@ export const fullServices = [
 export const fullBenefits = [
   {
     id: 1,
-    title: 'PHI-ACADEMY CERTIFIED EXPERTISE',
-    text: 'Discover beauty with confidence. Our Phi-Academy certification ensures you are in expert hands.',
+    title: 'CERTIFIED EXPERTISE',
+    text: 'Uncover beauty with assurance. Our accreditation guarantees that you are in the care of skilled professionals.',
     icon: '/assets/Pics/Cert.png'
   },
   {
     id: 2,
-    title: 'FREE CONSULTATION & A PLAN MADE JUST FOR YOU',
-    text: 'Have questions? Get clarity in a free consultation with Azita. It is personal, it is about you.',
+    title: 'FREE CONSULTATION',
+    text: "Got inquiries? Get clear answers through a complimentary consultation with Azita. It's personalized, centered around you.",
     icon: '/assets/Pics/Consultation.png'
   },
   {
     id: 3,
     title: 'CUTTING-EDGE TECHNOLOGY',
-    text: 'We offer Candela™ GentleMax Pro systems for our laser treatments. Beyond cutting-edge technology, we tailor treatments to celebrate your unique beauty.',
+    text: 'Utilizing advanced technology, we customize treatments to embrace and accentuate your individual beauty.',
     icon: '/assets/Pics/Tech.png'
   },
   {
     id: 4,
-    title: 'PROLONG YOUR BEAUTY WITH TOUCH UPS',
-    text: 'In addition to our personalzied after-care plans, our touch-up treatments ensure your permanent makeup lasts longer with you as the first day.',
+    title: 'AFTER-CARE TOUCH UPS',
+    text: 'Apart from our personalized after-care plans, our touch-up treatments guarantee the longevity of your permanent makeup, ensuring it stays as vibrant as the first day.',
     icon: '/assets/Pics/Beauty.png'
   }
 ];
 
 export const microBladingWork = {
   title: 'WITNESS THE BROW TRANSFORMATION',
-  txt: 'Step into our gallery and feel the transformative journey of our clients. Through the meticulous PhiBrows technique at AziTattoo Beauty, everyday brows in Vancouver are not just enhanced – they become heartfelt stories of renewed confidence, beauty, and self-expression. Witness these touching transformations and imagine the possibilities for yourself.',
+  txt: 'Step into our gallery and feel the transformative journey of our clients. Through the meticulous technique at AziTattoo Beauty, everyday brows in Vancouver are not just enhanced – they become heartfelt stories of renewed confidence, beauty, and self-expression. Witness these touching transformations and imagine the possibilities for yourself.',
   pics: [
     '/assets/Pics/MicroBlading.png',
     '/assets/Pics/LipBlush.png',
@@ -144,7 +144,7 @@ export const microBladingWork = {
 
 export const microBladingJourney = [
   "Your journey begins with a consultation. In a cozy one-on-one session, Azita listens to your brow aspirations, discussing shape, shade, and any unique preferences you might have. Together, we sketch your dream brows, ensuring you're thrilled with the vision before we dive into it.",
-  'As you relax in our treatment room, we gently apply a numbing cream to ensure a seamless experience. Using the unique PhiBrows technique, Azita personally ensures each stroke is a testament to precision, crafting brows that feel authentically yours.',
+  'As you relax in our treatment room, we gently apply a numbing cream to ensure a seamless experience. Using unique technique, Azita personally ensures each stroke is a testament to precision, crafting brows that feel authentically yours.',
   'Taking care of your new brows post-procedure is essential for optimal results. We guide you through the aftercare process, from avoiding water contact to the importance of not picking at the brows, ensuring your brows heal perfectly and last longer.'
 ];
 
@@ -152,20 +152,20 @@ export const microBladingTreatment = {
   title: 'MICROBLADING',
   titleUnderline: 'Refining Authentic Brows through Natural Techniques',
   bannerTxt:
-    '$350 plus taxes | 90 minutes\n\nMicroblading is a semi-permanent makeup technique designed to recreate natural-looking eyebrows. Using fine needles to deposit pigment into the skin, microblading mimics the appearance of individual brow hairs, filling in sparse areas and creating a fuller, more defined shape.\n\nWhether you have faced hair loss, over-plucking, or simply desire a more defined look, our microblading at AziTattoo Beauty offers a solution tailored to your unique facial features. Your stress-free brow transformation starts here!',
-  bannerPic: '/assets/Pics/MicroBlading.png',
+    "$350 plus taxes | 90 minutes\n\nMicroblading represents a semi-permanent makeup method crafted to replicate the look of natural eyebrows. By employing fine needles to deposit pigment into the skin, microblading emulates the appearance of individual brow hairs, addressing sparse areas and shaping a fuller, more defined contour.\n\nWhether you've experienced hair loss, over-plucking, or simply seek a more pronounced look, our microblading service at AziTattoo Beauty provides a personalized solution aligned with your distinct facial features. Embark on your hassle-free brow transformation with us!",
+  bannerPic: '/assets/Pics/1.png',
   infoTitle: 'Trust Your Brows With Azita',
   infoTxt:
     'As a Beauty Artist in Vancouver, Azita with her years of experience and a keen eye for detail ensures each stroke is precise, creating brows that not only look natural but also enhance your overall facial aesthetics.\n\nHer commitment to quality, hygiene, and client satisfaction sets us apart, making us a trusted choice for microblading in Vancouver.',
-  infoPic: '/assets/Pics/MicroBlading.png',
-  journey: microBladingJourney,
-  pastWork: microBladingWork
+  infoPic: '/assets/Pics/microblading_info.png',
+  journey: microBladingJourney
+  // pastWork: microBladingWork
 };
 
 export const tattooJourney = [
   'Explore tattoo possibilities with a complimentary consultation at AziTattoo Beauty. Azita listens to your ideas, ensuring your inked vision aligns seamlessly with your unique style – all at no cost to you!',
   "Experience the precision of Azita's work. Using top-quality techniques, we bring your vision to life with every stroke. Whether it's bold statements, intricate details, or symbolic designs, our commitment to excellence ensures stunning and lasting results.",
-  "Extend the life of your tattoo with AziTattoo Beauty's dedicated aftercare. Our simple instructions guide you through the steps of cleaning, moisturizing, and protecting your new ink. We're here beyond the procedure, supporting you in maintaining your vibrant, self-expressive tattoo for years to come."
+  "Extend the life of your tattoo with AziTattoo Beauty's dedicated aftercare. Our simple instructions guide you through the steps of cleaning, moisturizing, and protecting your new ink. We're here supporting you in maintaining your vibrant, self-expressive tattoo for years to come."
 ];
 
 export const tattooTreatment = {
@@ -174,12 +174,12 @@ export const tattooTreatment = {
     'Customized Tattoo Services for a Natural and Long-Lasting Expression',
   bannerTxt:
     'Price and duration depends on your needs. You can book a free consultation for pricing and time.\n\nOur tattoo services go beyond skin deep, offering the mastery of permanent ink to bring your vision to life. Whether you seek bold statements, intricate designs, or meaningful symbols, our skilled artists at AziTattoo Beauty specialize in creating personalized tattoos tailored to your unique style and preferences. Unveil the canvas of your self-expression and embark on a transformative tattoo experience with us.',
-  bannerPic: '/assets/Pics/Tattoo.png',
+  bannerPic: '/assets/Pics/3.png',
   infoTitle:
     'Amplify Your Aesthetic with Tattoo Services for Lasting Impressions',
   infoTxt:
     'Experience unparalleled artistry at AziTattoo Beauty. Our skilled and passionate tattoo artists transform your visions into captivating, permanent masterpieces. From bold designs to intricate, personalized artwork, we specialize in crafting tattoos that tell your unique story. Dive into the world of ink with us, where every tattoo is a testament to our commitment to excellence.',
-  infoPic: '/assets/Pics/Tattoo.png',
+  infoPic: '/assets/Pics/tattoo_info.png',
   journey: tattooJourney
 };
 
@@ -193,11 +193,16 @@ export const lipBlushTreatment = {
   title: 'LIP BLUSH',
   titleUnderline: 'Natural, Long-Lasting Lip Color Tailored for You',
   bannerTxt:
-    '$400 plus taxes | 90 minutes\n\nStruggling with uneven or faded lip color? Transform your beauty journey with Azita’s PhiContour Lip Blush at our Vancouver clinic. As a certified Phi-Academy artist, Azita masterfully enhances your lips, providing a burst of color, defining shape, and ensuring symmetry. Say farewell to constant touch-ups and embrace a vibrant, lasting hue tailored just for you.\n\nForget the hassle of daily lip makeup; enjoy a vibrant, long-lasting hue that’s exclusively yours. This is your moment to shine, to carry confidence in your smile, and to feel fabulous every single day. Ready to fall in love with your lips?',
-  bannerPic: '/assets/Pics/LipBlush.png',
-  infoTitle: 'Enhance Your Lips with Phi-Contour Lip Blush',
+    '$400 plus taxes | 90 minutes\n\nStruggling with uneven or faded lip color? Transform your beauty journey with Azita’s Lip Blush at our Vancouver clinic. As a certified artist, Azita masterfully enhances your lips, providing a burst of color, defining shape, and ensuring symmetry. Say farewell to constant touch-ups and embrace a vibrant, lasting hue tailored just for you.\n\nForget the hassle of daily lip makeup; enjoy a vibrant, long-lasting hue that’s exclusively yours. This is your moment to shine, to carry confidence in your smile, and to feel fabulous every single day. Ready to fall in love with your lips?',
+  bannerPic: '/assets/Pics/2.png',
+  infoTitle: 'Enhance Your Lips with Lip Blush',
   infoTxt:
-    "Struggling with uneven lip color, faded edges, or just dreaming of a fuller pout? You're not alone. Many turn to daily makeup routines, but there’s a better way. Azita’s PhiContour Lip Blush addresses these common concerns with precision, delivering vibrant, defined lips tailored to your unique features.\n\nEvery stroke is a step towards perfection, as we tailor the experience to your unique features, ensuring results that are both stunning and natural.",
-  infoPic: '/assets/Pics/LipBlush.png',
+    "Struggling with uneven lip color, faded edges, or just dreaming of a fuller pout? You're not alone. Many turn to daily makeup routines, but there’s a better way. Azita’s Lip Blush addresses these common concerns with precision, delivering vibrant, defined lips tailored to your unique features.\n\nEvery stroke is a step towards perfection, as we tailor the experience to your unique features, ensuring results that are both stunning and natural.",
+  infoPic: '/assets/Pics/lipblush_info.png',
   journey: lipBlushJourney
+};
+
+export const colors = {
+  bg: '#f5f4ef',
+  gold: '#a29061'
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import { Row, Col, Button, Typography } from 'antd';
 import useScreenSize from '../../Hooks/screenSize';
+import { colors } from '../../Util/constants';
 
 const Banner: React.FC = () => {
   const bannerStyle: React.CSSProperties = {
@@ -24,7 +25,7 @@ const Banner: React.FC = () => {
         <Col offset={3} xs={21} lg={10}>
           <Text strong style={{ whiteSpace: 'pre-wrap' }}>
             <span style={{ color: 'white', fontSize: '3.5em' }}>
-              Beauty Beyond Limits
+              Beauty <span style={{ color: colors.gold }}>Beyond</span> Limits
             </span>
           </Text>
         </Col>
@@ -46,18 +47,18 @@ const Banner: React.FC = () => {
       <br />
       <Row justify='start' gutter={[15, 15]} style={{ width: '100%' }}>
         <Col offset={3}>
-          <ScrollLink to='services-section' smooth={true} duration={500}>
-            <Button shape='round' type='primary' size='large'>
-              See Beauty Services
-            </Button>
-          </ScrollLink>
-        </Col>
-        <Col offset={scSize.width > 404 ? 0 : 3}>
           <a href='/booking'>
-            <Button shape='round' size='large'>
+            <Button type='primary' shape='round' size='large'>
               Book Now
             </Button>
           </a>
+        </Col>
+        <Col offset={scSize.width > 404 ? 0 : 3}>
+          <ScrollLink to='services-section' smooth={true} duration={500}>
+            <Button shape='round' size='large'>
+              See Beauty Services
+            </Button>
+          </ScrollLink>
         </Col>
       </Row>
     </div>

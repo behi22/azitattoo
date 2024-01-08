@@ -17,6 +17,7 @@ import LocationHours from '../Components/LocationHours';
 import { location1, location2 } from '../Util/constants';
 import Services from '../Components/Services';
 import { fullServices } from '../Util/constants';
+import axios from 'axios';
 //import axios from 'axios';
 
 const { Text } = Typography;
@@ -36,7 +37,20 @@ const Contact: React.FC = () => {
   const [form] = useForm();
   const [submitLoading, setSubmitLoading] = React.useState(false);
   const onFinish = (values: any) => {
-    console.log(values);
+    setSubmitLoading(true);
+    axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
+      data: {
+        name: values.name,
+        email: values.email,
+        company: 'N/A',
+        role: 'N/A',
+        message: values.message,
+        useDataEmail: true,
+        emailTo: 'info@azitattoobeauty.com'
+      },
+      type: 'sendgrid',
+      appName: 'WWT'
+    });
   };
 
   const dispatch = useDispatch();
@@ -52,7 +66,7 @@ const Contact: React.FC = () => {
           <Typography.Title level={2}>Contact Us</Typography.Title>
         </Col>
         <Col xs={20} lg={14} style={{ textAlign: 'center' }}>
-          <Text style={{ fontSize: '1.12em' }}>
+          <Text style={{ fontSize: '1.3em' }}>
             If there's anything on your mind, feel free to get in contact with
             us
           </Text>
@@ -84,6 +98,7 @@ const Contact: React.FC = () => {
                   htmlType='submit'
                   loading={submitLoading}
                   shape='round'
+                  size='large'
                   style={{ height: 'auto', whiteSpace: 'normal' }}
                 >
                   Submit

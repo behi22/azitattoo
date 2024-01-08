@@ -20,7 +20,7 @@ const About: React.FC = () => {
       <BioParagraph />
       <br />
       <br />
-      <Bio />
+      <Bio imgSource='/assets/Pics/azi.jpeg' />
       <br />
       <br />
       <div id='services-section'>

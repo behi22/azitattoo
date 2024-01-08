@@ -50,7 +50,8 @@ const AntNav: React.FC = () => {
       align='middle'
       style={{
         borderBottom: '1px solid lightgray',
-        height: '120px'
+        height: '120px',
+        background: '#fafafa'
       }}
     >
       {/* LOGO */}
@@ -67,8 +68,8 @@ const AntNav: React.FC = () => {
             }}
           >
             <Image
-              width={100}
-              src='./assets/logo.png'
+              width={120}
+              src='./assets/Pics/logo.PNG'
               preview={false}
               style={{ borderRadius: '100%' }}
             />

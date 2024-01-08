@@ -10,17 +10,6 @@ import LocationHours from './LocationHours';
 import { location1, location2 } from '../Util/constants';
 
 const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
-  const bannerStyle: React.CSSProperties = {
-    position: 'relative',
-    backgroundSize: 'cover',
-    backgroundColor: '#F8F8F8',
-    backgroundPosition: 'top',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: '50px 0'
-  };
-
   const contentStyle: React.CSSProperties = {
     height: '100%',
     backgroundPosition: 'center',
@@ -43,23 +32,20 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
 
   return (
     <>
-      <div style={bannerStyle}>
-        <Row justify='center' style={{ width: '100%' }}>
-          <Col offset={1} sm={20} md={10}>
-            <Image
-              alt={treatment.title}
-              preview={false}
-              height={'100%'}
-              style={{
-                objectFit: 'cover',
-                textAlign: 'center'
-              }}
-              src={treatment.bannerPic}
-            />
-          </Col>
-          <Col offset={1} sm={20} md={10}>
+      <div>
+        <Row
+          justify='center'
+          style={{ width: '100%', marginTop: '50px' }}
+          gutter={[25, 25]}
+        >
+          <Col xs={{ order: 2, span: 21 }} xl={{ order: 1, span: 11 }}>
             <Text strong style={{ whiteSpace: 'pre-wrap' }}>
-              <span style={{ color: 'black', fontSize: '2.9em' }}>
+              <span
+                style={{
+                  color: 'black',
+                  fontSize: scSize.width >= 1200 ? '2.9em' : '1.8em'
+                }}
+              >
                 {treatment.title}
               </span>
               <br />
@@ -74,40 +60,72 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
                 {treatment.bannerTxt}
               </span>
             </Text>
+            <br />
+            <br />
+            <Row>
+              <Col xs={21} xl={22}>
+                <Row
+                  justify='start'
+                  gutter={[15, 15]}
+                  style={{ width: '100%' }}
+                >
+                  <Col>
+                    <a href='/booking'>
+                      <Button shape='round' type='primary' size='large'>
+                        Book Now
+                      </Button>
+                    </a>
+                  </Col>
+                  <Col>
+                    <ScrollLink
+                      to='services-section'
+                      smooth={true}
+                      duration={500}
+                    >
+                      <Button shape='round' size='large'>
+                        Explore Other Services
+                      </Button>
+                    </ScrollLink>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
           </Col>
-        </Row>
-        <br />
-        <br />
-        <br />
-        <Row justify='start' gutter={[15, 15]} style={{ width: '100%' }}>
-          <Col offset={scSize.width > 768 ? 13 : 3}>
-            <a href='/booking'>
-              <Button shape='round' type='primary' size='large'>
-                Book Now
-              </Button>
-            </a>
-          </Col>
-          <Col offset={scSize.width > 404 ? 0 : 3}>
-            <ScrollLink to='services-section' smooth={true} duration={500}>
-              <Button shape='round' size='large'>
-                Explore Our Other Beauty Services
-              </Button>
-            </ScrollLink>
+          <Col xs={{ order: 1, span: 21 }} xl={{ order: 2, span: 11 }}>
+            <Image
+              alt={treatment.title}
+              preview={false}
+              height={
+                scSize.width > 1200
+                  ? '100%'
+                  : scSize.width > 600
+                    ? '350px'
+                    : '200px'
+              }
+              width={'100%'}
+              style={{
+                objectFit: 'cover',
+                textAlign: 'center',
+                borderRadius: '10px'
+              }}
+              src={treatment.bannerPic}
+            />
           </Col>
         </Row>
       </div>
       <br />
+      <br />
+      <br />
       <Row
         justify='center'
-        align='middle'
-        gutter={{ xs: 5, md: 30 }}
+        gutter={{ xs: 5, md: 50 }}
         style={{ width: '100%' }}
       >
-        <Col offset={1} xs={18} lg={8}>
+        <Col xs={21} lg={8}>
           <Image
             alt={treatment.infoTitle}
             preview={false}
-            height={'100%'}
+            height={scSize.width > 1180 ? '350px' : '100%'}
             style={{
               objectFit: 'cover',
               textAlign: 'center',
@@ -116,8 +134,7 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
             src={treatment.infoPic}
           />
         </Col>
-        <Col span={1} />
-        <Col xs={18} lg={12}>
+        <Col xs={21} lg={12}>
           <br />
           <span style={{ fontSize: '1.7em', fontFamily: 'serif' }}>
             {treatment.infoTitle}
@@ -179,9 +196,9 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
                   <img
                     width={'75px'}
                     height={'75px'}
-                    src={'/assets/Pics/Journey1.png'}
+                    src={'/assets/Pics/journey3.png'}
                   ></img>
-                  <h3 style={{ fontSize: '1.7em', fontFamily: 'serif' }}>
+                  <h3 style={{ fontSize: '1.5em', fontFamily: 'serif' }}>
                     Consultation
                   </h3>
                   <p
@@ -203,9 +220,9 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
                   <img
                     width={'75px'}
                     height={'75px'}
-                    src={'/assets/Pics/Journey2.png'}
+                    src={'/assets/Pics/journey2.png'}
                   ></img>
-                  <h3 style={{ fontSize: '1.7em', fontFamily: 'serif' }}>
+                  <h3 style={{ fontSize: '1.5em', fontFamily: 'serif' }}>
                     Procedure
                   </h3>
                   <p
@@ -227,9 +244,9 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
                   <img
                     width={'75px'}
                     height={'75px'}
-                    src={'/assets/Pics/Journey3.png'}
+                    src={'/assets/Pics/journey1.png'}
                   ></img>
-                  <h3 style={{ fontSize: '1.7em', fontFamily: 'serif' }}>
+                  <h3 style={{ fontSize: '1.5em', fontFamily: 'serif' }}>
                     Aftercare
                   </h3>
                   <p

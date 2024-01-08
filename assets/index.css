@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d37303ef446dbc5dcb91ddb1b37376e13b1ada96f912b1b4ef75acd7a3d47123
-size 179
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #f5f4ef;
+}
+
+.home_banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/assets/Pics/Banner.png);
+}
+
+.ant-drawer-body {
+  background-color: #fafafa;
+}
+
+.ant-drawer-header {
+  background-color: #fafafa;
+}

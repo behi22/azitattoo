@@ -13,12 +13,25 @@ import Contact from './Pages/Contact';
 import Booking from './Pages/Booking';
 import ConfirmedBooking from './Pages/ConfirmedBooking';
 import CancelBooking from './Pages/CancelBooking';
+import { colors } from './Util/constants';
 
 const App = () => {
   return (
     <div>
       <BrowserRouter>
-        <ConfigProvider>
+        <ConfigProvider
+          theme={{
+            token: { colorPrimary: colors.gold },
+            components: {
+              Menu: { colorBgContainer: '#fafafa' },
+              Drawer: { colorBgContainer: '#fafafa' },
+              Button: {
+                defaultBg: colors.bg,
+                defaultColor: colors.gold
+              }
+            }
+          }}
+        >
           <AntNav />
           <Routes>
             <Route path='/' element={<Home />} />

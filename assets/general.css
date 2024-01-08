@@ -1,3 +1,38 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ae288415976c9363ad8ebb9a7c23552e410096419fbffe59efcff8023b8aeca0
-size 522
+.mobile-nav-content {
+  display: none;
+}
+
+.desktopMenu > * {
+  margin: 0px 4.5% !important;
+}
+
+.desktopMenu {
+  display: flex !important;
+}
+
+.ant-float-btn-body {
+  background-color: #a29061 !important;
+}
+
+.ant-float-btn-body:hover {
+  background-color: #a29061 !important;
+}
+
+.serviceCard {
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .mobile-nav-content {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .desktopMenu {
+    display: none !important;
+  }
+
+  .getintouch {
+    font-size: 2.2em;
+  }
+}

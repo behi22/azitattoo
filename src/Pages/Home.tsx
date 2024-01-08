@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       <br />
       <Benefits benefits={fullBenefits} />
       <br />
-      <Bio />
+      <Bio imgSource='/assets/Pics/azi.jpeg' />
       <br />
       <br />
       <div id='services-section'>

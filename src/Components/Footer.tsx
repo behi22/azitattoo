@@ -8,7 +8,8 @@ const Footer: React.FC = () => {
       align={'middle'}
       style={{
         borderTop: '1px solid lightgray',
-        height: '125px'
+        height: '125px',
+        background: '#fafafa'
       }}
     >
       <Col span={24} style={{ textAlign: 'center' }}>
