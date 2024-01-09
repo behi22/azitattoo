@@ -196,7 +196,7 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
                   <img
                     width={'75px'}
                     height={'75px'}
-                    src={'/assets/Pics/journey3.png'}
+                    src={'/assets/Pics/Journey3.png'}
                   ></img>
                   <h3 style={{ fontSize: '1.5em', fontFamily: 'serif' }}>
                     Consultation
@@ -220,7 +220,7 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
                   <img
                     width={'75px'}
                     height={'75px'}
-                    src={'/assets/Pics/journey2.png'}
+                    src={'/assets/Pics/Journey2.png'}
                   ></img>
                   <h3 style={{ fontSize: '1.5em', fontFamily: 'serif' }}>
                     Procedure
@@ -244,7 +244,7 @@ const Treatment: React.FC<TreatmentProps> = ({ treatment }) => {
                   <img
                     width={'75px'}
                     height={'75px'}
-                    src={'/assets/Pics/journey1.png'}
+                    src={'/assets/Pics/Journey1.png'}
                   ></img>
                   <h3 style={{ fontSize: '1.5em', fontFamily: 'serif' }}>
                     Aftercare
