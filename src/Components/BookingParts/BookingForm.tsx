@@ -96,7 +96,8 @@ const BookingForm: React.FC = () => {
         axios.post('https://app-acz3khlqkq-uc.a.run.app/sendemail', {
           data: {
             ...data,
-            useDataEmailTo: true,
+            emailTo: data.email,
+            useDataEmailTo: 'true',
             id: ref.id
           },
           type: 'sendgrid',
